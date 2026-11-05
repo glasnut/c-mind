@@ -1,0 +1,54 @@
+.az { padding-block: 32px 64px; display: grid; gap: 20px; }
+.az__head h1 { margin: 0 0 8px; }
+.az__head p { margin: 0; color: var(--c-text-muted); max-width: 70ch; }
+.az__picker { display: flex; gap: 12px; flex-wrap: wrap; padding: 16px; border-radius: var(--radius); background: var(--c-surface); border: 1px solid var(--c-border); }
+.az .field { display: grid; gap: 6px; flex: 1 1 200px; font-size: 13px; color: var(--c-text-muted); min-width: 0; }
+.az .field--wide { flex: 3 1 300px; }
+.az select, .cons__form input { width: 100%; padding: 11px 12px; border-radius: var(--radius-sm); border: 1px solid var(--c-border); background: var(--c-bg); color: var(--c-white); font: inherit; }
+.az__empty { padding: 24px; border-radius: var(--radius); border: 1px dashed var(--c-border-strong); }
+.az__empty h2 { margin: 0 0 6px; }
+.az__quick { display: flex; flex-wrap: wrap; gap: 10px; }
+.az__product { display: flex; justify-content: space-between; gap: 12px; align-items: flex-end; flex-wrap: wrap; }
+.az__product h2 { margin: 0; }
+.az__product p { margin: 4px 0 0; color: var(--c-text-muted); }
+.az__link { color: var(--c-blue); font-weight: 600; }
+.wp { padding: 20px; border-radius: var(--radius); background: var(--c-surface); border: 1px solid var(--c-border); }
+.wp h2 { margin: 0 0 12px; font-size: 18px; }
+.wp__chips { display: flex; flex-wrap: wrap; gap: 10px; }
+.wp__details { margin-top: 14px; }
+.wp__details summary { cursor: pointer; color: var(--c-blue); font-weight: 600; }
+.wp__sliders { display: grid; gap: 12px; margin-top: 12px; max-width: 520px; }
+.wp__slider { display: grid; gap: 4px; font-size: 14px; }
+.wp__slider b { color: var(--c-orange); margin-left: 6px; }
+.wp__slider input { width: 100%; accent-color: var(--c-orange); }
+.wp__hint { margin: 0; font-size: 13px; color: var(--c-text-muted); }
+.wp__reset { justify-self: start; padding: 8px 14px; border-radius: 999px; border: 1px solid var(--c-border-strong); background: transparent; color: var(--c-white); font: inherit; cursor: pointer; }
+.az__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.az__alts { padding: 20px; border-radius: var(--radius); background: var(--c-surface); border: 1px solid var(--c-border); }
+.az__alts h2 { margin: 0 0 12px; font-size: 18px; }
+.az__alts ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+.alt { display: grid; gap: 6px; align-content: start; padding: 14px; border-radius: var(--radius-sm); background: var(--c-bg); border: 1px solid var(--c-border); }
+.alt p { margin: 0; font-size: 14px; color: var(--c-text-muted); }
+.alt__tag { justify-self: start; padding: 2px 10px; border-radius: 999px; background: rgba(8,123,255,.18); font-size: 12px; font-weight: 700; }
+.alt__name { font-weight: 700; color: var(--c-white); }
+.alt__meta { font-size: 13px; color: var(--c-text-muted); }
+.alt__btn, .msg__action, .cons__form button { justify-self: start; padding: 9px 16px; border-radius: 999px; border: 0; background: var(--c-orange); color: #1a0d00; font: inherit; font-weight: 700; cursor: pointer; }
+.cons__form button:disabled { opacity: .5; cursor: default; }
+.cons { padding: 20px; border-radius: var(--radius); background: var(--c-surface); border: 1px solid var(--c-border); display: grid; gap: 14px; }
+.cons__head { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: space-between; }
+.cons h2 { margin: 0; font-size: 18px; }
+.cons__badge { padding: 4px 12px; border-radius: 999px; border: 1px solid rgba(255,133,0,.4); color: var(--c-orange); font-size: 12px; font-weight: 700; }
+.cons__lead { margin: 0; color: var(--c-text-muted); }
+.cons__chips { display: flex; flex-wrap: wrap; gap: 10px; }
+.cons__log { display: grid; gap: 10px; max-height: 420px; overflow-y: auto; }
+.msg { max-width: 85%; padding: 12px 14px; border-radius: var(--radius-sm); display: grid; gap: 8px; }
+.msg p { margin: 0; line-height: 1.5; }
+.msg--user { justify-self: end; background: rgba(8,123,255,.25); }
+.msg--bot { background: var(--c-bg); border: 1px solid var(--c-border); }
+.cons__form { display: flex; gap: 10px; }
+.cons__form input { flex: 1; }
+@media (max-width: 760px) {
+  .az__grid { grid-template-columns: 1fr; }
+  .msg { max-width: 100%; }
+  .cons__form { flex-direction: column; }
+}

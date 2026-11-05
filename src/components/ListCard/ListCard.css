@@ -1,0 +1,58 @@
+.listcard {
+  padding: 22px;
+  border-radius: var(--radius);
+  border: 1px solid var(--c-border);
+  background: rgba(11, 32, 64, 0.7);
+}
+
+.listcard h2 {
+  margin-bottom: 12px;
+  font-size: 18px;
+}
+
+.listcard ul {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.listcard li {
+  position: relative;
+  padding-left: 26px;
+  font-size: 15px;
+}
+
+.listcard li::before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 18px;
+  font-weight: 800;
+}
+
+.listcard--pro li::before {
+  content: '+';
+  color: #4ade80;
+}
+
+.listcard--con li::before {
+  content: '−';
+  color: var(--c-orange);
+}
+
+.listcard--use li::before {
+  content: '→';
+  color: var(--c-blue);
+}
+
+.listcard p {
+  font-size: 14px;
+  color: var(--c-text-muted);
+}
+
+.listcard--warn li::before {
+  content: '!';
+  color: var(--c-orange);
+}

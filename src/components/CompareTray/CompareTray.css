@@ -1,0 +1,129 @@
+.tray {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 40;
+  padding-block: 12px;
+  background: rgba(8, 26, 54, 0.96);
+  border-top: 1px solid var(--c-border-strong);
+  box-shadow: 0 -10px 30px rgba(1, 8, 22, 0.5);
+  backdrop-filter: blur(10px);
+}
+
+.tray__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 20px;
+}
+
+.tray__title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  color: var(--c-blue);
+}
+
+.tray__title span {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+  color: var(--c-white);
+}
+
+.tray__title small {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--c-text-muted);
+}
+
+.tray__list {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tray__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px 6px 14px;
+  border-radius: 999px;
+  background: rgba(8, 123, 255, 0.16);
+  border: 1px solid var(--c-border-strong);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.tray__chip button {
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.tray__chip button:hover {
+  background: var(--c-orange);
+  color: #1a0d00;
+}
+
+.tray__actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-left: auto;
+}
+
+.tray__clear {
+  border: 0;
+  background: none;
+  font-weight: 600;
+  color: var(--c-text-muted);
+}
+
+.tray__clear:hover {
+  color: var(--c-white);
+}
+
+.tray__go {
+  display: inline-flex;
+  align-items: center;
+  height: 42px;
+  padding-inline: 22px;
+  border-radius: 999px;
+  background: var(--c-orange);
+  color: #1a0d00;
+  font-weight: 800;
+}
+
+.tray__go:hover {
+  background: var(--c-orange-hover);
+}
+
+.tray__hint {
+  font-size: 14px;
+  color: var(--c-text-muted);
+}
+
+.tray__notice {
+  flex-basis: 100%;
+  font-size: 14px;
+  color: var(--c-orange);
+}
+
+@media (max-width: 640px) {
+  .tray__actions {
+    width: 100%;
+    justify-content: space-between;
+    margin-left: 0;
+  }
+}

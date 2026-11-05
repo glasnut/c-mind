@@ -1,0 +1,238 @@
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(900px 500px at 80% 30%, rgba(8, 123, 255, 0.22), transparent 70%),
+    radial-gradient(600px 400px at 0% 0%, rgba(8, 123, 255, 0.1), transparent 70%);
+}
+
+.hero__inner {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  gap: 24px;
+  padding-block: 56px 40px;
+}
+
+.hero__title {
+  font-size: clamp(34px, 5vw, 62px);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+}
+
+.hero__accent {
+  color: var(--c-orange);
+}
+
+.hero__subtitle {
+  margin-top: 20px;
+  font-size: clamp(17px, 2vw, 22px);
+  color: var(--c-text-muted);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 36px;
+}
+
+.hero__visual {
+  position: relative;
+  justify-self: center;
+  width: 100%;
+  max-width: 520px;
+}
+
+.hero-art {
+  width: 100%;
+  height: auto;
+}
+
+.hero-art__spin {
+  animation: hero-spin 7s linear infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+@keyframes hero-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.hero__stat {
+  position: absolute;
+  right: -8px;
+  bottom: 28px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: var(--radius);
+  background: rgba(11, 32, 64, 0.9);
+  border: 1px solid var(--c-border);
+  color: var(--c-orange);
+  backdrop-filter: blur(8px);
+}
+
+.hero__stat div {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.hero__stat strong {
+  font-size: 24px;
+  color: var(--c-white);
+}
+
+.hero__stat span {
+  font-size: 12px;
+  color: var(--c-text-muted);
+}
+
+/* ---------- Возможности ---------- */
+.features {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  padding-block: 8px 48px;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 20px;
+  border-radius: var(--radius);
+  background: rgba(11, 32, 64, 0.7);
+  border: 1px solid var(--c-border);
+  transition:
+    transform 0.25s var(--ease),
+    border-color 0.25s var(--ease),
+    box-shadow 0.25s var(--ease);
+}
+
+.feature:hover {
+  transform: translateY(-3px);
+  border-color: var(--c-border-strong);
+  box-shadow: var(--glow);
+}
+
+.feature__icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: rgba(255, 133, 0, 0.1);
+  color: var(--c-orange);
+}
+
+.feature__title,
+.feature__text {
+  display: block;
+}
+
+.feature__title {
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.feature__text {
+  font-size: 14px;
+  color: var(--c-text-muted);
+}
+
+/* ---------- Популярные ---------- */
+.popular {
+  padding-bottom: 72px;
+}
+
+.popular__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.popular__title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: clamp(22px, 3vw, 28px);
+  font-weight: 800;
+}
+
+.popular__flame {
+  color: var(--c-orange);
+}
+
+.popular__all {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  color: var(--c-orange);
+  white-space: nowrap;
+}
+
+.popular__all:hover {
+  color: var(--c-orange-hover);
+}
+
+.popular__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.popular__note {
+  margin-top: 16px;
+  font-size: 13px;
+  color: var(--c-text-muted);
+}
+
+/* ---------- Адаптивность ---------- */
+@media (max-width: 1100px) {
+  .features,
+  .popular__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .hero__inner {
+    grid-template-columns: 1fr;
+    padding-block: 36px 24px;
+  }
+
+  .hero__visual {
+    max-width: 440px;
+  }
+
+  .hero__stat {
+    right: 0;
+  }
+}
+
+@media (max-width: 560px) {
+  .features,
+  .popular__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero__actions .btn {
+    width: 100%;
+  }
+
+  .popular__head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

@@ -1,0 +1,35 @@
+/* Дизайн-токены C-Mind: все цвета, отступы и радиусы в одном месте. */
+:root {
+  /* Палитра из ТЗ */
+  --c-bg: #06152d;
+  --c-surface: #0b2040;
+  --c-blue: #087bff;
+  --c-orange: #ff8500;
+  --c-white: #ffffff;
+  --c-gray: #e8edf5;
+
+  /* Производные */
+  --c-surface-2: #0f2a52;
+  --c-text: var(--c-white);
+  --c-text-muted: rgba(232, 237, 245, 0.68);
+  --c-border: rgba(8, 123, 255, 0.22);
+  --c-border-strong: rgba(8, 123, 255, 0.55);
+  --c-orange-hover: #ff9a2e;
+
+  /* Типографика */
+  --font: 'Manrope Variable', 'Segoe UI', system-ui, sans-serif;
+
+  /* Радиусы и тени */
+  --radius-sm: 10px;
+  --radius: 16px;
+  --radius-lg: 22px;
+  --shadow: 0 10px 30px rgba(1, 8, 22, 0.45);
+  --glow: 0 0 0 1px var(--c-border-strong), 0 8px 28px rgba(8, 123, 255, 0.18);
+
+  /* Сетка */
+  --container: 1240px;
+  --gutter: clamp(16px, 4vw, 40px);
+  --header-h: 72px;
+
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+}

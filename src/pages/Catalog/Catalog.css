@@ -1,0 +1,339 @@
+.catalog {
+  padding-block: 40px 120px;
+}
+
+.catalog__head {
+  margin-bottom: 24px;
+}
+
+.catalog__title {
+  font-size: clamp(30px, 4.5vw, 44px);
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+.catalog__note {
+  margin-top: 6px;
+  font-size: 14px;
+  color: var(--c-text-muted);
+}
+
+/* Вкладки категорий */
+.catalog__tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  padding-bottom: 6px;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.catalog__tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  height: 42px;
+  padding-inline: 16px;
+  border-radius: 999px;
+  border: 1px solid var(--c-border);
+  background: rgba(11, 32, 64, 0.7);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--c-gray);
+  transition:
+    background-color 0.2s var(--ease),
+    border-color 0.2s var(--ease),
+    color 0.2s var(--ease);
+}
+
+.catalog__tab:hover {
+  border-color: var(--c-border-strong);
+  color: var(--c-white);
+}
+
+.catalog__tab.is-active {
+  color: var(--c-orange);
+  background: rgba(255, 133, 0, 0.12);
+  border-color: rgba(255, 133, 0, 0.45);
+}
+
+/* Панель поиска и сортировки */
+.catalog__toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.catalog__search {
+  display: flex;
+  flex: 1 1 280px;
+  align-items: center;
+  gap: 10px;
+  height: 46px;
+  padding-inline: 16px;
+  border-radius: 999px;
+  border: 1px solid var(--c-border);
+  background: rgba(11, 32, 64, 0.85);
+  color: var(--c-text-muted);
+}
+
+.catalog__search:focus-within {
+  border-color: var(--c-blue);
+  box-shadow: 0 0 0 3px rgba(8, 123, 255, 0.2);
+}
+
+.catalog__search input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: none;
+  font-size: 15px;
+  color: var(--c-white);
+}
+
+.catalog__sort select {
+  height: 46px;
+  padding-inline: 16px;
+  border-radius: 999px;
+  border: 1px solid var(--c-border);
+  background: rgba(11, 32, 64, 0.85);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--c-white);
+}
+
+.catalog__sort select option {
+  background: var(--c-surface);
+}
+
+.catalog__filters-btn {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  height: 46px;
+  padding-inline: 18px;
+  border-radius: 999px;
+  border: 1px solid var(--c-border);
+  background: rgba(11, 32, 64, 0.85);
+  font-weight: 600;
+}
+
+.catalog__badge {
+  display: inline-grid;
+  place-items: center;
+  min-width: 20px;
+  height: 20px;
+  padding-inline: 6px;
+  border-radius: 999px;
+  background: var(--c-orange);
+  color: #1a0d00;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+/* Основная сетка */
+.catalog__layout {
+  display: grid;
+  grid-template-columns: 270px 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.catalog__count {
+  margin-bottom: 16px;
+  font-size: 14px;
+  color: var(--c-text-muted);
+}
+
+.catalog__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.catalog__empty {
+  padding: 48px 24px;
+  text-align: center;
+  border-radius: var(--radius);
+  border: 1px dashed var(--c-border-strong);
+  background: rgba(11, 32, 64, 0.5);
+}
+
+.catalog__empty h2 {
+  font-size: 22px;
+}
+
+.catalog__empty p {
+  margin-top: 8px;
+  color: var(--c-text-muted);
+}
+
+.catalog__empty-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.catalog__reset {
+  height: 42px;
+  padding-inline: 20px;
+  border-radius: 999px;
+  border: 1px solid rgba(232, 237, 245, 0.35);
+  background: none;
+  font-weight: 700;
+}
+
+.catalog__reset:hover {
+  border-color: var(--c-blue);
+  background: rgba(8, 123, 255, 0.14);
+}
+
+/* Фильтры */
+.filters {
+  position: sticky;
+  top: calc(var(--header-h) + 16px);
+  max-height: calc(100vh - var(--header-h) - 120px);
+  overflow-y: auto;
+  padding: 20px;
+  border-radius: var(--radius);
+  border: 1px solid var(--c-border);
+  background: linear-gradient(180deg, var(--c-surface-2), var(--c-surface));
+}
+
+.filters__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.filters__head h2 {
+  font-size: 18px;
+}
+
+.filters__reset {
+  border: 0;
+  background: none;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--c-orange);
+}
+
+.filters__group {
+  margin: 0 0 18px;
+  padding: 16px 0 0;
+  border: 0;
+  border-top: 1px solid var(--c-border);
+}
+
+.filters__group legend {
+  float: left;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 0;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--c-text-muted);
+}
+
+.filters__group legend + * {
+  clear: both;
+}
+
+.filters__check {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-block: 5px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.filters__check input {
+  width: 17px;
+  height: 17px;
+  margin: 0;
+  accent-color: var(--c-orange);
+}
+
+.filters__check small {
+  margin-left: auto;
+  font-size: 12px;
+  color: var(--c-text-muted);
+}
+
+.filters__favorites {
+  margin-bottom: 14px;
+  font-weight: 600;
+}
+
+.filters__price {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.filters__price input {
+  width: 100%;
+  min-width: 0;
+  height: 40px;
+  padding-inline: 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--c-border);
+  background: rgba(6, 21, 45, 0.7);
+  font-size: 14px;
+}
+
+.filters__hint {
+  margin-top: 8px;
+  font-size: 12px;
+  color: var(--c-text-muted);
+}
+
+@media (max-width: 1100px) {
+  .catalog__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 860px) {
+  .catalog__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .catalog__filters-btn {
+    display: inline-flex;
+  }
+
+  .filters {
+    display: none;
+    position: static;
+    max-height: none;
+  }
+
+  .filters.is-open {
+    display: block;
+  }
+}
+
+@media (max-width: 560px) {
+  .catalog__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .catalog__sort {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  .catalog__sort select {
+    width: 100%;
+  }
+}
